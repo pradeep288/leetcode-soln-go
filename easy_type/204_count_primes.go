@@ -1,4 +1,8 @@
 // Reference: https://www.youtube.com/watch?v=5LMkddl2NCk
+package easy_type
+
+import "math"
+
 func countPrimes(n int) int {
     
     if n == 0 || n== 1 {
