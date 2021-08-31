@@ -5,7 +5,7 @@ func largestIsland(grid [][]int) int {
 	if grid == nil || len(grid) ==0 || len(grid[0]) == 0{
 		return max
 	}
-	// Identify Unique Island groups
+	// Identify  Islands groups, assign id to them and store size in hashmap
 	for i:=0;i<row;i++{
 		for j:=0;j<col;j++{
 			if grid[i][j]==1{
@@ -16,6 +16,7 @@ func largestIsland(grid [][]int) int {
 			}
 		}
 	}
+	// Change 0 to 1 and identify new continous island by checking all the 4 sides.
 	directions := [][]int{{1,0},{0,1},{-1,0},{0,-1}}
 	for i:=0;i<row;i++{
 		for j:=0;j<col;j++{
