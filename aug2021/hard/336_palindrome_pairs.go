@@ -11,33 +11,33 @@ func palindromePairs(words []string) [][]int {
 
 	for i, v := range words {
 		// empty string + Palindrome and palindrome + ""
-		if v == ""{
-			for j:=0;j<=len(words)-1;j++{
-				if isPalindrome(words[j]) && i!=j {
-					res = append(res, []int{i,j})
-					res = append(res, []int{j,i})
+		if v == "" {
+			for j := 0; j <= len(words)-1; j++ {
+				if isPalindrome(words[j]) && i != j {
+					res = append(res, []int{i, j})
+					res = append(res, []int{j, i})
 				}
 			}
 		}
 
 		// string + reverse of string
 		rev := reverse(words[i])
-		if j,ok := inputMap[rev];ok && i!=j{
-			res = append(res,[]int{i,j})
+		if j, ok := inputMap[rev]; ok && i != j {
+			res = append(res, []int{i, j})
 		}
 
 		// 3rd case
 		// palindrome + x and rev(x) exists
 		// x + palindrome and rev(x) exists
-		for k:=1;k<=len(words[i])-1;k++{
+		for k := 1; k <= len(words[i])-1; k++ {
 			rev = reverse(v[k:])
-			if _,ok:=inputMap[rev];ok && isPalindrome(v[:k]) && i != inputMap[rev] {
-				res = append(res,[]int{inputMap[rev], i})
+			if _, ok := inputMap[rev]; ok && isPalindrome(v[:k]) && i != inputMap[rev] {
+				res = append(res, []int{inputMap[rev], i})
 			}
 
 			rev = reverse(v[:k])
-			if _,ok:=inputMap[rev];ok && isPalindrome(v[k:]) && i != inputMap[rev] {
-				res = append(res,[]int{i, inputMap[rev]})
+			if _, ok := inputMap[rev]; ok && isPalindrome(v[k:]) && i != inputMap[rev] {
+				res = append(res, []int{i, inputMap[rev]})
 			}
 		}
 	}
@@ -55,13 +55,11 @@ func isPalindrome(word string) bool {
 	return true
 }
 
-
 func reverse(inp string) string {
 	val := []rune(inp)
 	var out string
-	for i:=len(val)-1;i>=0;i--{
+	for i := len(val) - 1; i >= 0; i-- {
 		out = out + string(val[i])
 	}
 	return out
 }
-

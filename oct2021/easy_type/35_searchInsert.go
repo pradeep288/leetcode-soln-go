@@ -8,7 +8,7 @@ func searchInsert(nums []int, target int) int {
 	var mid int
 
 	for low < high {
-		mid = (low + high)/2
+		mid = (low + high) / 2
 		if nums[mid] == target {
 			return mid
 		}

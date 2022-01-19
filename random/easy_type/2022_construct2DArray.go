@@ -1,7 +1,5 @@
 package easy_type
 
-import "sort"
-
 func construct2DArray(original []int, m int, n int) [][]int {
 	if m*n != len(original) {
 		return [][]int{}
@@ -15,6 +13,6 @@ func construct2DArray(original []int, m int, n int) [][]int {
 			idx++
 		}
 	}
-	
+
 	return res
 }

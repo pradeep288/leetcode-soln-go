@@ -12,7 +12,7 @@ func solve(board [][]byte) bool {
 				for _, val := range values {
 					if validBoard(board, i, j, val) {
 						board[i][j] = val
-					} else{
+					} else {
 						continue
 					}
 					if solve(board) {
