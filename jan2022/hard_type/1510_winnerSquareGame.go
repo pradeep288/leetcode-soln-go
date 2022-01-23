@@ -1,4 +1,4 @@
-package medium_type
+package hard_type
 
 func winnerSquareGame(n int) bool {
 	if n == 1 {
